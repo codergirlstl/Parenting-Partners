@@ -3,11 +3,12 @@ require "./address"
 
 class Contact
   attr_writer :first_name, :middle_name, :last_name
-  attr_reader :phone_numbers, :addresses
+  attr_reader :phone_numbers, :addresses, :emails
   
   def initialize
     @phone_numbers = []
     @addresses = []
+    @emails = []
   end
   
   def add_phone_number(kind, number)
@@ -28,6 +29,12 @@ class Contact
     addresses.push(address)
   end
   
+  def add_email(email_address)
+    email = Email.new
+    email.email_address = email_address
+    emails.push(email)
+  end
+
   def first_name
     @first_name
   end
@@ -91,5 +98,11 @@ class Contact
     puts "Addresses"
     addresses.each { |address| puts address.to_s('short') }
   end
+
+  def print_emails
+    puts "Emails"
+    emails.each { |email_address| puts email_address }
 end
+
+
 
