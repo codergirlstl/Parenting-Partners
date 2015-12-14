@@ -1,2 +1,2 @@
 # parent-site
-Website for separated parents to share information.
+Website (Ruby on Rails) for separated parents to share information.
