@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'calendar/show'
-  end
+  get 'welcome/index'
 
-  CalendarExample::Application.routes.draw do
-      resource :calendar, only: [:show], controller: :calendar
-      root to: "calendar#show"
-  end
+  resources :todo_lists
+  #get 'calendar/shw'
+  get 'welcome/index'
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
