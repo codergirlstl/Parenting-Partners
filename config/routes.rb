@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'calendar/show'
+  end
+
+  CalendarExample::Application.routes.draw do
+      resource :calendar, only: [:show], controller: :calendar
+      root to: "calendar#show"
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
