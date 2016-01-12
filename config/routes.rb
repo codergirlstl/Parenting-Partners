@@ -4,19 +4,8 @@ Rails.application.routes.draw do
     resources :todo_lists
 end
 
-    #get 'welcome/index'
-
-#
-  #end
-
-  #get 'calendar/show'
-  #get 'welcome/index'
-
-
-  
-
-
-
-  # You can have the root of your site routed with "root"
-    #root 'welcome#index'
+CalendarExample::Application.routes.draw do
+    resource :calendar, only: [:show], controller: :calendar
+    root to: "calendar#show"
+end
 
