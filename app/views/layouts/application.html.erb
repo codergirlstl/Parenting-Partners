@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Parenting Partners</title>
+  <title><%= link_to "Parenting Partners", root_path %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<header>
   <div class="nav">
-    <h1><%= link_to "Parenting Partners", root_path %></h1>
+    <h1></h1>
     <ul>
       <li><%= link_to "Todo Lists", todo_lists_path %></li>
     </ul>
@@ -22,8 +21,8 @@
     <li><%= link_to "FAQ" , faq_path %></li>
   </ul>
 </nav>
-
-
+</header>
+<body>
   <% flash.each do |type, message| %>
   <div class="alert flash <%= type %>">
     <%= message %>
@@ -33,4 +32,5 @@
 <%= yield %>
 
 </body>
+<footer>© <%= Date.today.year %> Parenting Partners</footer>
 </html>
