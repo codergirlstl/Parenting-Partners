@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
     get "/pages/:page" => "pages#show"
     root "pages#show", page: "home"
-    resources :todo_lists
     resources :user
+    resources :todo_lists do
+        resources :todo_items do
+            member do
+                patch :complete
+            end
+        end
+    end
     resources :conversations do
         resources :messages
         end
