@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'user_sessions/new'
+
+  get 'user_sessions/create'
+
     get "/pages/:page" => "pages#show"
     root "pages#show", page: "home"
     resources :user
@@ -9,6 +13,7 @@ Rails.application.routes.draw do
             end
         end
     end
+    'todo_lists#index'
     resources :conversations do
         resources :messages
         end
@@ -17,6 +22,10 @@ Rails.application.routes.draw do
     end
 
 #CalendarExample::Application.routes.draw do
+  get 'user_sessions/new'
+
+  get 'user_sessions/create'
+
 #resources :calendar, only: [:show], controller: :calendar
 #root to: "calendar#show"
 #end
