@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= link_to "Parenting Partners", root_path %></title>
+  <title>Odot</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<header>
+<body>
+
   <div class="nav">
-    <ul>
-      <li><%= link_to "Todo Lists", todo_lists_path %></li>
-    </ul>
+   
     <br class="clear" />
   </div>
 
-</header>
-<body>
   <% flash.each do |type, message| %>
   <div class="alert flash <%= type %>">
     <%= message %>
   </div>
   <% end %>
 
-<%= yield %>
+<div class="content">
+  <%= yield %>
+</div>
 
 </body>
 <footer>© <%= Date.today.year %> Parenting Partners
@@ -31,7 +30,15 @@
     <li><%= link_to "Home" , root_path %></li>
     <li><%= link_to "About" , about_path %></li>
     <li><%= link_to "FAQ" , faq_path %></li>
-    <li><%= link_to "Sign Up", new_user_path %></li>
+    <li><%= link_to "Todo Lists", todo_lists_path %></li>
+      <% if logged_in? %>
+        <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Log In", new_user_session_path %></li>
+        <li><%= link_to "Sign Up", new_user_path %></li>
+      <% end %>
+    </ul>
+
   </ul>
 </nav>
 </footer>
