@@ -17,15 +17,16 @@ Rails.application.routes.draw do
         end
     end
     #'todo_lists#index'
-    #get 'todo_item'=>'todo_lists#index'
+    #get 'todo_lists'=>'todo_lists#index'
     resources :conversations do
         resources :messages
         end
+    resource :calendar, only: [:show], controller: :calendar
     get 'about' =>'about_pages#about'
     get 'faq' =>'faq_pages#faq'
     get 'login' =>'user_session#new'
     end
 
-#resource :calendar, only: [:show], controller: :calendar
+
 #root to: "calendar#show"
 
