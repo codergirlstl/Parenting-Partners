@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Parenting Partners</title>
+  <title><%= yield :title %>Parenting Partners</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   
   <% flash.each do |type, message| %>
-  <div class="alert flash <%= type %>">
+  <div class="flash alert-box text-center <%= type %>">
     <%= message %>
   </div>
   <% end %>
+
+  <header>
+    <nav class="navbar navbar-fixed-top">
+    <div class="container">
+       <ul class="nav navbar-nav ">
+      <li><%= link_to "Home" , root_path %></li>
+      <li><%= link_to "About" , about_path %></li>
+     </ul>
+    </div>
+  </nav>
+  </header>
 
 <div class="content">
   <%= yield %>
 </div>
 
 </body>
-<footer>© <%= Date.today.year %> Parenting Partners
-<nav>
-  <ul class="nav navbar-nav navbar-left">
-    <li><%= link_to "Home" , root_path %></li>
-    <li><%= link_to "About" , about_path %></li>
-    <li><%= link_to "Request Lists", todo_lists_path %></li>
+<footer>
+  <nav class="navbar navbar-fixed-bottom">
+    <div class="container">
+       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
-        <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+        <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Log Out", logout_path, method: :delete %></button></li>
       <% else %>
-        <li><%= link_to "Log In", new_user_session_path %></li>
+        <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Log In", new_user_session_path %></button></li>
       <% end %>
     </ul>
-</nav>
+    </div>
+  </nav>
 </footer>
-</html>
+
+
+  
+
+  
+
+  
+
+  

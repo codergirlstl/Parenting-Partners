@@ -1,16 +1,12 @@
 class TodoListsController < ApplicationController
     before_action :require_user
     before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
+    before_action :set_back_link, except: [:index]
     
     # GET /todo_lists
     # GET /todo_lists.json
     def index
         @todo_lists = current_user.todo_lists
-    end
-    
-    # GET /todo_lists/1
-    # GET /todo_lists/1.json
-    def show
     end
     
     # GET /todo_lists/new
@@ -29,10 +25,10 @@ class TodoListsController < ApplicationController
         
         respond_to do |format|
             if @todo_list.save
-                format.html { redirect_to @todo_list, notice: 'Todo list was successfully created.' }
+                format.html { redirect_to todo_list_todo_items_path(@todo_list), notice: 'Todo list was successfully created.' }
                 format.json { render action: 'show', status: :created, location: @todo_list }
                 else
-                format.html { render action: 'new' }
+                format.html { render action: 'new', error: "Todo list could not be created." }
                 format.json { render json: @todo_list.errors, status: :unprocessable_entity }
             end
         end
@@ -43,10 +39,10 @@ class TodoListsController < ApplicationController
     def update
         respond_to do |format|
             if @todo_list.update(todo_list_params)
-                format.html { redirect_to @todo_list, notice: 'Todo list was successfully updated.' }
+                format.html { redirect_to todo_list_todo_items_path(@todo_list), success: 'Todo list was successfully updated.' }
                 format.json { head :no_content }
                 else
-                format.html { render action: 'edit' }
+                format.html { render action: 'edit', error: "Todo list could not be updated." }
                 format.json { render json: @todo_list.errors, status: :unprocessable_entity }
             end
         end
@@ -62,7 +58,20 @@ class TodoListsController < ApplicationController
         end
     end
     
+    def email
+        destination = params[:to]
+        notifier = Notifier.todo_list(@todo_list, destination)
+        if destination =~ /@/ && notifier.deliver
+            redirect_to todo_list_todo_items_path(@todo_list), success: "Todo list sent."
+            else
+            redirect_to todo_list_todo_items_path(@todo_list), error: "Todo list could not be sent."
+        end
+    end
+    
     private
+    def set_back_link
+        go_back_link_to todo_lists_path
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_todo_list
         @todo_list = current_user.todo_lists.find(params[:id])
@@ -70,6 +79,6 @@ class TodoListsController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_list_params
-        params.require(:todo_list).permit(:title, :description)
+        params.require(:todo_list).permit(:title)
     end
 end

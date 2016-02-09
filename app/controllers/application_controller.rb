@@ -4,6 +4,13 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     add_flash_types :success
     
+    
+    private
+    def go_back_link_to(path)
+        @go_back_link_to ||= path
+        @go_back_link_to
+    end
+    
     private
     def logged_in?
         current_user

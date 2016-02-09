@@ -1,8 +1,10 @@
 class TodoItemsController < ApplicationController
     before_action :require_user
     before_action :find_todo_list
+    before_action :set_back_link, except: [:index]
     
     def index
+        go_back_link_to todo_lists_path
     end
     
     def new
@@ -47,8 +49,8 @@ class TodoItemsController < ApplicationController
     
     def complete
         @todo_item = @todo_list.todo_items.find(params[:id])
-        @todo_item.update_attribute(:completed_at, Time.now)
-        redirect_to todo_list_todo_items_path, notice: "Todo item marked as complete."
+        @todo_item.toggle_completion!
+        redirect_to todo_list_todo_items_path, notice: "Todo item updated."
     end
     
     def url_options
@@ -56,6 +58,10 @@ class TodoItemsController < ApplicationController
     end
     
     private
+    def set_back_link
+        go_back_link_to todo_list_todo_items_path(@todo_list)
+    end
+    
     def find_todo_list
         @todo_list = current_user.todo_lists.find(params[:todo_list_id])
     end
@@ -65,3 +71,5 @@ class TodoItemsController < ApplicationController
     end
     
 end
+
+   

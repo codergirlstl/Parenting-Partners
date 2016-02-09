@@ -10,7 +10,9 @@ $yellow: #ffff80;
 /* universal */
 
 body {
-  padding-top: 60px;
+  background-color: $gray-medium-light;
+  padding-top: 20px;
+  margin-top: 30px;
 }
 
 section {
@@ -27,17 +29,26 @@ textarea {
   text-align: center;
   h1 {
     margin-bottom: 10px;
+    color: $midnight-blue
   }
+}
+.content {
+  text-align: center;
+
+}
+title {
+  color: $midnight-blue;
+  
 }
 
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
+  color: $midnight-blue;
   line-height: 1;
 }
 
 h1 {
-  color: $midnight-blue;
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
@@ -50,7 +61,6 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $midnight-blue;
 }
 
 p {
@@ -61,43 +71,40 @@ p {
 
 /* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+
+.navbar {
+ background-color: $yellow;
 }
+
 
 /* footer */
 
 footer {
+
+  background: url(asset_path('/images/sunburst.jpg'));
   margin-top: 45px;
+  margin-bottom: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
-  color: $gray;
+  color: $midnight-blue;
   a {
     color: $gray;
     &:hover {
-      color: $gray-darker;
+      color: $gray-medium-light;
     }
   }
-  small {
-    float: left;
+  .navbar {
+    background-color: $midnight-blue;
+    padding-top: 10px;
   }
+  
   ul {
-    float: right;
+    float: left;
     list-style: none;
     li {
-      float: left;
+      float: right;
       margin-left: 15px;
+    
     }
   }
 }
