@@ -5,12 +5,20 @@
 
 $midnight-blue: #036;
 $gray-medium-light: #eaeaea;
-$yellow: #ffff80;
+$nebula: #d2e1dd;
+$patina: #699;
+$venus: #998099;
+$iron: #dadbdf;
+$regent-grey: #808c99;
+$pale-sky: #6b717f;
+$wafer: #e1d7d2;
+$boquet: #b37399;
+$hopbush: #c69;
 
 /* universal */
 
 body {
-  background-color: $gray-medium-light;
+  background-color: $patina;
   padding-top: 20px;
   margin-top: 30px;
 }
@@ -25,7 +33,7 @@ textarea {
 }
 
 .center {
-  background-color: $yellow;
+  background-color: $nebula;
   text-align: center;
   h1 {
     margin-bottom: 10px;
@@ -73,7 +81,7 @@ p {
 
 
 .navbar {
- background-color: $yellow;
+ background-color: $nebula;
 }
 
 
@@ -85,7 +93,6 @@ footer {
   margin-top: 45px;
   margin-bottom: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
   color: $midnight-blue;
   a {
     color: $gray;

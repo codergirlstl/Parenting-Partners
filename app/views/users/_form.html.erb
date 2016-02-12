@@ -2,7 +2,6 @@
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,28 +10,56 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="row">
+    <div class="small-12 columns">
     <%= f.label :first_name, "First Name" %><br>
     <%= f.text_field :first_name %>
   </div>
-  <div class="field">
+  </div>  
+
+  <br />
+
+  <div class="row">
+    <div class="small-12 columns">
     <%= f.label :last_name, "Last Name" %><br>
     <%= f.text_field :last_name %>
   </div>
-  <div class="field">
+  </div>  
+
+  <br />
+
+  <div class="row">
+    <div class="small-12 columns">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
+  </div>  
+
+  <br />
+
+  <div class="row">
+    <div class="small-12 columns">
     <%= f.label :password %><br>
     <%= f.password_field :password %>
-  </div>
-  <div class="field">
+  </div></div>  
+
+  <br />
+
+  <div class="row">
+    <div class="small-12 columns">
     <%= f.label :password_confirmation, "Password (again)" %><br>
     <%= f.password_field :password_confirmation %>
   </div>
+</div>  
 
-  <div class="actions">
-    <%= f.submit "Sign Up" %>
-  </div>
+  <br />
+ <div class="row">
+    <div class="small-12 columns"> 
+<%= f.submit "Sign Up" %>
+</div>
+</div>
+
+    
+    
+  
 <% end %>

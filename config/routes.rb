@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
     get "/pages/:page" => "pages#show"
     root "pages#show", page: "home"
-    
     get "/login" => "user_sessions#new", as: :login
     delete "/logout" => "user_sessions#destroy", as: :logout
     
@@ -15,11 +14,8 @@ Rails.application.routes.draw do
             end
         end
     end
-    resources :conversations do
-        resources :messages
-    end
+    #resources :conversations do
+    #resources :messages
+    #end
     #resources :calendar, only: [:show], controller: :calendar
-    get 'about' =>'about_pages#about'
-    get 'faq' =>'faq_pages#faq'
-    get 'login' =>'user_session#new'
 end
