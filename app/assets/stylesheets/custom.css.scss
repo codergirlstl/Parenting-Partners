@@ -15,6 +15,14 @@ $wafer: #e1d7d2;
 $boquet: #b37399;
 $hopbush: #c69;
 
+@mixin icon($asset) {
+  background: url(asset_path(#{$asset})) no-repeat center center;
+  background-size: contain;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
 /* universal */
 
 body {
@@ -22,6 +30,7 @@ body {
   padding-top: 20px;
   margin-top: 30px;
 }
+
 
 section {
   overflow: auto;
