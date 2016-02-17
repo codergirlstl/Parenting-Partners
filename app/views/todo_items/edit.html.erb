@@ -1,7 +1,7 @@
 <%= title "Editing Request Item" %>
 
-<%= form_for [@todo_list, @todo_item], builder: FoundationFormBuilder do |form| %>
-  <%= render partial: 'form', locals: { form: form } %>
+<%= form_for [@todo_list, @todo_item] do |form| %>
+  <%= render partial: form %>
 <% end %>
 
 <div class="row">
