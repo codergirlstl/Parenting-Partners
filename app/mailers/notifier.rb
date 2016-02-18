@@ -14,3 +14,4 @@ class Notifier < ActionMailer::Base
         mail(to: destination, subject: "#{@user.first_name} sent you a todo list")
     end
 end
+

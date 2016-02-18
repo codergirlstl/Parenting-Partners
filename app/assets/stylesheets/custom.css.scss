@@ -14,19 +14,14 @@ $pale-sky: #6b717f;
 $wafer: #e1d7d2;
 $boquet: #b37399;
 $hopbush: #c69;
+$yellow: #ffff80;
+$royal-blue: #0132CC;
 
-@mixin icon($asset) {
-  background: url(asset_path(#{$asset})) no-repeat center center;
-  background-size: contain;
-  display: block;
-  width: 24px;
-  height: 24px;
-}
 
 /* universal */
 
 body {
-  background-color: $patina;
+  background-color: $yellow;
   padding-top: 20px;
   margin-top: 30px;
 }
@@ -42,20 +37,37 @@ textarea {
 }
 
 .center {
-  background-color: $nebula;
+  background-color: $yellow;
   text-align: center;
   h1 {
-    margin-bottom: 10px;
     color: $midnight-blue
   }
 }
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
 .content {
   text-align: center;
 
 }
+
+.logo {
+  a {
+    background: transparent url(asset_path(#{"Sunburst_opt.jpg"})) no repeat center center;
+    background-size: contain;
+    display: block;
+    height: 18px;
+  }
+}
 title {
   color: $midnight-blue;
-  
+  text-align: center;
 }
 
 /* typography */
@@ -83,6 +95,7 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  color: $midnight-blue;
 }
 
 
@@ -90,18 +103,15 @@ p {
 
 
 .navbar {
- background-color: $nebula;
+ background-color: $royal-blue;
+ color: $midnight-blue;
 }
 
 
 /* footer */
 
 footer {
-
-  background: url(asset_path('/images/sunburst.jpg'));
-  margin-top: 45px;
   margin-bottom: 45px;
-  padding-top: 5px;
   color: $midnight-blue;
   a {
     color: $gray;
@@ -110,7 +120,7 @@ footer {
     }
   }
   .navbar {
-    background-color: $midnight-blue;
+    background-color: $royal-blue;
     padding-top: 10px;
   }
   

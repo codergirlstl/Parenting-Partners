@@ -1,4 +1,4 @@
-
+<div class="content">
 <li id="<%= dom_id(todo_item) %>" class="todo-item row">
       <div class="small-2 medium-1 columns">
         <% if todo_item.completed? %>
@@ -11,3 +11,4 @@
         <%= link_to todo_item.content, edit_todo_list_todo_item_path(@todo_list, todo_item) %>
       </div>
     </li>
+   </div> 

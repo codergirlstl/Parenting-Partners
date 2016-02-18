@@ -22,8 +22,8 @@
     <nav class="navbar navbar-fixed-top">
     <div class="container">
        <ul class="nav navbar-nav ">
-      <li><%= link_to "Home" , root_path %></li>
-      <li><%= link_to "Request Lists", todo_lists_path %></li>
+      <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Home" , root_path %></button></li>
+      <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Requests", todo_lists_path %></button></li>
      </ul>
     </div>
   </nav>
@@ -32,6 +32,11 @@
 <div class="content">
   <%= yield %>
 </div>
+
+
+  <h1 class="logo">
+  <%= image_tag "Sunburst_opt.jpg" %>
+  </h1>
 
 </body>
 <footer>
