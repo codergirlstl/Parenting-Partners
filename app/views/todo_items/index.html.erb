@@ -17,13 +17,11 @@
   <%= render partial: 'blank_slate' %>
 <% end %>
 
+  <div class="small-4 columns">
+  <button type="button" class="btn btn-default">
+  <span class="glyphicon glyphicon-plus"><%= link_to "  Add Item", new_todo_list_todo_item_path(@todo_list) %>
+  </div>
+<br >
+<br >
 
- <div class="small-4 columns">
-    <%= link_to "Edit", edit_todo_list_path(@todo_list) %>
-  </div>
-  <div class="small-4 columns">
-    <%= link_to "Delete", todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure you want to delete this list? This is no undo." } %>
-  </div>
-  <div class="small-4 columns">
-  <%= link_to "Add Item", new_todo_list_todo_item_path(@todo_list) %>
-  </div>
+  
