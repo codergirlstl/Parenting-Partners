@@ -3,9 +3,12 @@
 <%= form_for [@todo_list, @todo_item] do |form| %>
   <%= render partial: form %>
 <% end %>
-
+<br >
 <div class="row">
   <div class="small-12 columns">
+  	<button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-" aria-hidden="true">
     <%= link_to "Delete", todo_list_todo_item_path(@todo_list, @todo_item), method: :delete, data: { confirm: "Are you sure?" } %>
+</span></button>
   </div>
 </div>

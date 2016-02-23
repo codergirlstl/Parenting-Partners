@@ -1,26 +1,14 @@
-<%= content_for(:title) do %><%= @todo_list.title %> | <% end %>
-<div class="row collapse todo-list-title">
-  <div class="small-11 columns">
-    <h2 class="page-title truncate"><%= @todo_list.title %></h2>
-  </div>
-  <div class="small-1 columns">
-  </div>
-</div>
-
-
- 
+<ul class="list-unstyled">
 <% if @todo_list.todo_items.size > 0 %>
-  <ul class="list todo-items no-bullet">
     <%= render partial: "todo_item", collection: @todo_list.todo_items %>
-  </ul>
 <% else %>
   <%= render partial: 'blank_slate' %>
 <% end %>
-
   <div class="small-4 columns">
   <button type="button" class="btn btn-default">
-  <span class="glyphicon glyphicon-plus"><%= link_to "  Add Item", new_todo_list_todo_item_path(@todo_list) %>
+  <span class="glyphicon glyphicon-plus"><%= link_to "  Add Item", new_todo_list_todo_item_path(@todo_list) %></span></button>
   </div>
+</ul>
 <br >
 <br >
 

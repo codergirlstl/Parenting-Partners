@@ -1,13 +1,11 @@
 <%= title "Request Lists" %>
-
+<ul class="list-unstyled">
 <% if @todo_lists.size > 0 %>
-  <ul class="list todo-lists no-bullet">
     <%= render partial: "todo_list", collection: @todo_lists %>
-  </ul>
 <% else %>
   <%= render partial: 'blank_slate' %>
 <% end %>
-
+</ul>
 <button type="button" class="btn btn-default">
-  <span class="glyphicon glyphicon-th-list"><%= link_to '  New Request List', new_todo_list_path %></span>
+  <span class="glyphicon glyphicon-th-list"><%= link_to '  New List', new_todo_list_path %></span>
 </button>

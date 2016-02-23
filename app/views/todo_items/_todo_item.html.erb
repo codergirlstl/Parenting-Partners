@@ -3,14 +3,17 @@
       <div class="small-10 medium-11 columns truncate todo-content" title="<%= todo_item.content %>">
         <%= link_to todo_item.content, edit_todo_list_todo_item_path(@todo_list, todo_item) %>
         <% if todo_item.completed? %>
-          <button type="button" class="btn btn-default">
-          <span class="glyphicon glyphicon-ok" aria-hidden="true"><%= link_to " Done", complete_todo_list_todo_item_path(@todo_list, todo_item), method: :patch %></span>
+          <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-ok" aria-hidden="true"><%= link_to " Got It!", complete_todo_list_todo_item_path(@todo_list, todo_item), method: :patch %></span>
             </button>
         <% else %>
-        <button type="button" class="btn btn-default">
+        <button type="button" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-unchecked" aria-hidden="true">
-          <%= link_to " Not Done", complete_todo_list_todo_item_path(@todo_list, todo_item), method: :patch %></span></button>
+          <%= link_to " Nope", complete_todo_list_todo_item_path(@todo_list, todo_item), method: :patch %></span></button>
         <% end %>
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-edit" aria-hidden="true">
+        <%= link_to " Edit", edit_todo_list_todo_item_path(@todo_list, todo_item) %></span></button>
     </li>
     <br >
 </div>
