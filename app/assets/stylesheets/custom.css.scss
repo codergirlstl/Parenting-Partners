@@ -24,23 +24,38 @@ body {
   background-color: $yellow;
   padding-top: 20px;
   margin-top: 30px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.button {
+    background-color: $royal-blue; 
+    border: none;
+    color: $midnight-blue;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 
 section {
   overflow: auto;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 
 textarea {
   resize: vertical;
+  font-family: Tahoma, Geneva, sans-serif;
+  background-color: $wafer;
 }
 
 .center {
   background-color: $yellow;
   text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
   h1 {
-    color: $midnight-blue
+    color: $midnight-blue;
+    font-family: Tahoma, Geneva, sans-serif;
   }
 }
 
@@ -48,12 +63,14 @@ textarea {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 
 
 .content {
   text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
 
 }
 
@@ -68,12 +85,14 @@ textarea {
 title {
   color: $midnight-blue;
   text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
   color: $midnight-blue;
+  font-family: Tahoma, Geneva, sans-serif;
   line-height: 1;
 }
 
@@ -96,6 +115,7 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
   color: $midnight-blue;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 
@@ -105,6 +125,7 @@ p {
 .navbar {
  background-color: $royal-blue;
  color: $midnight-blue;
+ font-family: Tahoma, Geneva, sans-serif;
 }
 
 
@@ -113,6 +134,7 @@ p {
 footer {
   margin-bottom: 45px;
   color: $midnight-blue;
+  font-family: Tahoma, Geneva, sans-serif;
   a {
     color: $gray;
     &:hover {
