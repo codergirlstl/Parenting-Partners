@@ -4,15 +4,13 @@
 <% else %>
   <%= render partial: 'blank_slate' %>
 <% end %>
-<br >
+<br ><br >
   <div class="small-4 columns">
-  <button type="button" class="btn btn-default btn-sm">
+  <button type="button" class="btn btn-default btn-default">
   <span class="glyphicon glyphicon-plus"><%= link_to "  Add Item", new_todo_list_todo_item_path(@todo_list) %></span></button>
-  </div><br >
+  </div><br ><br >
   <div class="small-4 columns">
-   <button type="button" class="btn btn-default btn-sm">
-  <span class="glyphicon glyphicon-remove">
-<%= link_to "Delete List", todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure you want to delete this list? This is no undo." } %></span></button>
+<%= link_to "Delete List", todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure you want to delete this list? This is no undo." } %>
 	</div>
 </ul>
 <br >
