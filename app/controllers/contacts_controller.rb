@@ -18,7 +18,7 @@ class ContactsController < ApplicationController
         
         respond_to do |format|
             if @contacts.save
-                format.html { redirect_to contacts_path(@contact), notice: 'Request list was successfully created.' }
+                format.html { redirect_to contacts_path(@contact), notice: 'Contact was successfully created.' }
                 format.json { render action: 'show', status: :created, location: @contact }
                 else
                 format.html { render action: 'new', error: "Contact could not be created." }
@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
     
     def update
         respond_to do |format|
-            if @contact.update(contacts_params)
+            if @contacts.update(contacts_params)
                 format.html { redirect_to contacts_path(@todo_list), success: 'Contact was successfully updated.' }
                 format.json { head :no_content }
                 else
@@ -40,7 +40,7 @@ class ContactsController < ApplicationController
     end
     
     def destroy
-        @contact.destroy
+        @contacts.destroy
         respond_to do |format|
             format.html { redirect_to contacts_url }
             format.json { head :no_content }
@@ -57,7 +57,7 @@ class ContactsController < ApplicationController
     end
     
     
-    def todo_list_params
+    def contacts_params
         params.require(:contact).permit(:relationship)
     end
 

@@ -1,9 +1,9 @@
-<%= form_for(@contact) do |f| %>
-<% if @contact.errors.any? %>
+<%= form_for @contacts do |f| %>
+<% if @contacts.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+      <h2><%= pluralize(@contacts.errors.count, "error") %> prohibited this contact from being saved:</h2>
       <ul>
-      <% @contact.errors.full_messages.each do |msg| %>
+      <% @contacts.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -34,6 +34,8 @@
     <%= f.text_field :relationship %>
   </div>
 </div>
+
+<br />
  
   <div class="row">
     <div class="small-12 columns">
