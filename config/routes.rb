@@ -14,6 +14,7 @@ Rails.application.routes.draw do
             end
         end
     end
+    resources :contacts
     #resources :conversations do
     #resources :messages
     #end
