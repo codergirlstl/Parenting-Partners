@@ -12,7 +12,7 @@ group :test do
   gem 'capybara', '~> 2.1.0'
 end
 
-
+gem "simple_calendar", "~> 2.0"
 
 gem 'rails', '4.2.5'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
