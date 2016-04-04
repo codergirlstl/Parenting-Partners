@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
     before_action :require_user
-    
+    before_action :set_contact, only: [:show, :edit, :update, :destroy]
+    before_action :set_back_link, except: [:index]
     
     def index
         @contacts = current_user.contacts
