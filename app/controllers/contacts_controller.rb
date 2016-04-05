@@ -11,6 +11,9 @@ class ContactsController < ApplicationController
         @contacts = current_user.contacts.new
     end
     
+    def show
+    end
+    
     def edit
     end
     
@@ -23,7 +26,7 @@ class ContactsController < ApplicationController
                 format.json { render action: 'show', status: :created, location: @contact }
                 else
                 format.html { render action: 'new', error: "Contact could not be created." }
-                format.json { render json: @todo_list.errors, status: :unprocessable_entity }
+                format.json { render json: @contact.errors, status: :unprocessable_entity }
             end
         end
     end
@@ -31,11 +34,11 @@ class ContactsController < ApplicationController
     def update
         respond_to do |format|
             if @contacts.update(contacts_params)
-                format.html { redirect_to contacts_path(@todo_list), success: 'Contact was successfully updated.' }
+                format.html { redirect_to contacts_path(@contact), success: 'Contact was successfully updated.' }
                 format.json { head :no_content }
                 else
                 format.html { render action: 'edit', error: "Contact could not be updated." }
-                format.json { render json: @contacts.errors, status: :unprocessable_entity }
+                format.json { render json: @contact.errors, status: :unprocessable_entity }
             end
         end
     end
@@ -54,7 +57,7 @@ class ContactsController < ApplicationController
     end
     
     def set_contact
-        @contact = current_user.contacts.find(params[:id])
+        @contacts = current_user.contacts.find(params[:id])
     end
     
     

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :meetings
     get "/pages/:page" => "pages#show"
     root "pages#show", page: "home"
     get "/login" => "user_sessions#new", as: :login
@@ -15,8 +16,10 @@ Rails.application.routes.draw do
         end
     end
     resources :contacts
+    resources :calendars do
+        resources :meetings
+        end
     #resources :conversations do
     #resources :messages
     #end
-    #resources :calendar, only: [:show], controller: :calendar
 end

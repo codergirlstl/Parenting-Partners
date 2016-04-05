@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     add_flash_types :success
-    
+
     
     private
     def go_back_link_to(path)
@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
             redirect_to new_user_session_path, notice: "You must be logged in to access that page."
         end
     end
+    
 end
 
 

@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
     has_many :todo_lists
     has_many :contacts
     
+    has_one :calendar
+    
     validates :email, presence: true,
     uniqueness: true,
     format: {
