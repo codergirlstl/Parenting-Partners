@@ -62,7 +62,7 @@ class ContactsController < ApplicationController
     
     
     def contacts_params
-        params.require(:contact).permit(:relationship)
+        params.require(:contact).permit(:firstname)
     end
 
     

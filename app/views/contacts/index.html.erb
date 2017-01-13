@@ -1,9 +1,8 @@
 <%= title "Contacts" %>
 <ul class="list-unstyled">
-<button type="button" class="btn btn-default btn-lg">
-<%= link_to ' All Contacts',contacts_path %>
-<span class="glyphicon glyphicon-list"></span>
-</button>
 
-  <span class="glyphicon glyphicon-plus"><%= link_to '  New Contact', new_contact_path %></span>
+<button type="button" class="btn btn-default btn-lg"><%= link_to '  New Contact', new_contact_path %>
+  <span class="glyphicon glyphicon-plus"></span>
 </button>
+ <%= render partial: "contacts", collection: @contacts %>
+</ul>
